@@ -15,5 +15,6 @@ def secure_token
     File.write(token_file, token)
     token
   end
+end
 
 MapleBacon::Application.config.secret_token = secure_token
