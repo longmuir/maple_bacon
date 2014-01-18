@@ -4,6 +4,14 @@ class UserTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
+  test "should save user with name and valid email" do
+    user = User.new
+    user.name = "Mr. Ed"
+    user.email = "ed@hotmail.com"
+    assert user.save
+  end
+  
   test "should not save user without name" do
     user = User.new
     assert !user.save
