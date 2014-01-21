@@ -1,4 +1,6 @@
 MapleBacon::Application.routes.draw do
+  get "users/new"
+  get "users/index"
   match '/about', to: 'static_pages#about', via: 'get'
   match '/home', to: 'static_pages#home', via: 'get'
   match '/piggy', to: 'static_pages#piggy', via: 'get'
