@@ -1,10 +1,14 @@
 MapleBacon::Application.routes.draw do
   resources :users
   get "users/index"
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/home', to: 'static_pages#home', via: 'get'
-  match '/piggy', to: 'static_pages#piggy', via: 'get'
+
   root :to => 'static_pages#piggy'
+
+  match '/signup',  to: 'users#new',          via: 'get'
+  match '/about',   to: 'static_pages#about', via: 'get'
+  match '/home',    to: 'static_pages#home',  via: 'get'
+  match '/piggy',   to: 'static_pages#piggy', via: 'get'
+
 
 
   #Original generated routes

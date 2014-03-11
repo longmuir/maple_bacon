@@ -9,6 +9,10 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(password: "foobar", password_confirmation: "foobar")
   end
 
+  test "should respond to password_digest" do 
+    assert_respond_to(@user, :password_digest)
+  end
+
   test "should save @user with name and valid email" do
     @user.name = "Mr. Ed"
     @user.email = "ed@hotmail.com"
@@ -38,8 +42,16 @@ class UserTest < ActiveSupport::TestCase
 
    test "should not have mismatching passwords" do
     @user.name = "Mr. Ed"
-    @user.email = "okemail.com"
+    @user.email = "ok@email.com"
     @user.password = "funkyfoo"
+    assert !@user.save
+  end
+
+  test "should not have password too short" do
+    @user.name = "Mr. Ed"
+    @user.email = "ok@email.com"
+    @user.password = "foo"
+    @user.password_confirmation = "foo"
     assert !@user.save
   end
 

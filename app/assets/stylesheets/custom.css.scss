@@ -1,3 +1,5 @@
+@import "foundation/components/buttons";
+
 #tempTitle {
   position: fixed;
   top: 50%;
@@ -17,10 +19,16 @@
   text-align: center;
 }
 
-#signup-form {
-  
+.home-buttons {
+  padding-top: 6em;
 }
 
+.brown-button {
+  $button-font-weight: bold; 
+  $button-font-family: inherit;
+  @include button($button-med,brown,10px, true, false, false);
+
+}
 
 /*will sass this when I have the time */
 
