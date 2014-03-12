@@ -18,6 +18,13 @@ class UserTest < ActiveSupport::TestCase
     @user.email = "ed@hotmail.com"
     assert @user.save
   end
+
+  test "should save @user with remember_token" do
+    @user.name = "Mr. Ed"
+    @user.email = "ed@hotmail.com"
+    assert @user.save
+    assert_not_nil @user.remember_token
+  end
   
   test "should not save @user without name" do
     assert !@user.save

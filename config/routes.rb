@@ -1,5 +1,6 @@
 MapleBacon::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   get "users/index"
 
   root :to => 'static_pages#piggy'
@@ -8,6 +9,9 @@ MapleBacon::Application.routes.draw do
   match '/about',   to: 'static_pages#about', via: 'get'
   match '/home',    to: 'static_pages#home',  via: 'get'
   match '/piggy',   to: 'static_pages#piggy', via: 'get'
+
+  match '/signin',  to: 'sessions#new',       via: 'get'
+  match '/singout', to: 'sessions#destroy',   via: 'delete'
 
 
 
