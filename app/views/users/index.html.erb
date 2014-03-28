@@ -1,2 +1,12 @@
 <h1>List of Users</h1>
-<p>TBD..</p>
+
+<table class="users">
+  <th>Name</th>
+  <th>Email</th>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.name, user %></td>
+      <td><%= user.email %></td>
+    </tr>
+  <% end %>
+</table>

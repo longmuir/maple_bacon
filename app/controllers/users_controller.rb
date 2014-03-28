@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
   end
 
   def show
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      sign_in @user
+      sign_in(@user, true)
       flash[:success] = "Welcome to Maple Bacon!"
       redirect_to @user
     else

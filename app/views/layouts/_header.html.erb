@@ -13,7 +13,9 @@
       <li class="has-dropdown">
         <a href="#">Options</a>
         <ul class="dropdown">
-          <li><a href="#">Option 1</a></li>
+          <li>
+            <%= link_to "Sign out", signout_path, method: "delete" %>
+          </li>
         </ul>
       </li>
     </ul>
