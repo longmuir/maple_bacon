@@ -12,7 +12,7 @@
 
 }
 
-.title {
+#title {
   margin: 50px;
   text-size: x-large;
   font-family:"arial","sans-serif","times";
@@ -28,6 +28,44 @@
   $button-font-family: inherit;
   @include button($button-med,brown,10px, true, false, false);
 
+}
+
+#ingredients-form {
+  width:100%;
+}
+
+.row {
+    max-width: 75%;
+}
+
+.table-remove-link {
+  width: 5em;
+  text-align:center;
+  vertical-align:center;
+  padding:0;
+  padding-bottom:1em;
+  margin:0;
+}
+
+.quantity-row {
+  padding:0;
+  margin:0;
+  height:100%;
+  width:3em;
+}
+
+.ingredient-row { 
+  padding:0;
+  margin:0;
+}
+
+.tight-table-input {
+}
+
+.fields {
+  padding:0;
+  margin:0;
+  height:100%
 }
 
 /*will sass this when I have the time */

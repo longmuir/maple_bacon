@@ -1,18 +1,18 @@
 MapleBacon::Application.routes.draw do
   resources :users
+  resources :recipes
   resources :sessions, only: [:new, :create, :destroy]
   get "users/index"
 
   root :to => 'static_pages#home'
 
-  match '/signup',  to: 'users#new',          via: 'get'
-  match '/about',   to: 'static_pages#about', via: 'get'
-  match '/home',    to: 'static_pages#home',  via: 'get'
-  match '/piggy',   to: 'static_pages#piggy', via: 'get'
+  match '/signup',       to: 'users#new',               via: 'get'
+  match '/about',        to: 'static_pages#about',      via: 'get'
+  match '/home',         to: 'static_pages#home',       via: 'get'
+  match '/piggy',        to: 'static_pages#piggy',      via: 'get'
 
   match '/signin',  to: 'sessions#new',       via: 'get'
   match '/signout', to: 'sessions#destroy',   via: 'delete'
-
 
 
   #Original generated routes

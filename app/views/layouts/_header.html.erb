@@ -1,7 +1,7 @@
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Maple Bacon</a></h1>
+      <h1><%= link_to "Maple Bacon", root_path %></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
   </ul>
@@ -9,7 +9,9 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"><a href="#">Create New Recipe</a></li>
+      <li class="active">
+          <%= link_to "Create New Recipe", new_recipe_path %>
+      </li>
       <li class="has-dropdown">
         <a href="#">Options</a>
         <ul class="dropdown">

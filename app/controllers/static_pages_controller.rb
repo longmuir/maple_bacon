@@ -12,4 +12,6 @@ class StaticPagesController < ApplicationController
   
   def piggy
   end
+
+
 end

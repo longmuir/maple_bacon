@@ -51,6 +51,7 @@
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
+$primary-color: #8A0808;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -919,11 +920,15 @@
 
 // These control the background color for the table and even rows
 // $table-bg: #fff;
+$table-bg: inherit;
+
 // $table-even-row-bg: #f9f9f9  ;
+$table-even-row-bg: inherit;
 
 // These control the table cell border style
 // $table-border-style: solid;
 // $table-border-size: 1px;
+$table-border-size: 0px;
 // $table-border-color: #ddd;
 
 // These control the table head styles

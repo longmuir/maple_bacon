@@ -1,0 +1,39 @@
+<h1 id="title">New Recipe</h1>
+
+<%= nested_form_for @recipe do |f| %>
+
+  <div class="row">
+    <div class="small-4 columns">
+      <table id="ingredients-form">
+        <th>Amount</th>
+        <th>Ingredient</th>
+        <%= f.fields_for :additions, :wrapper => false %>
+      </table>
+      <p><%= f.link_to_add "Add another ingredient", :additions, :data => { :target => "#ingredients-form" } %></p>
+    </div>
+
+    <div class="small-8 columns">
+      <%= f.label :title, "What are we eating?", style: "font-weight: bold" %>
+      <%= f.text_field :title %>
+
+      <h4>Steps</h4>
+
+      <ol>
+      <%= f.fields_for :steps do |step_form| %>
+        <li>
+          <%= step_form.link_to_remove "(remove)"%>
+          <%= step_form.text_area :content %> 
+        </li>
+      <% end %>
+      <p><%= f.link_to_add "Add another step", :steps %></p>
+    </ol>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="small-2 small-centered columns">
+      <%= f.submit "I`m Done!", class: "brown-button" %>
+    </div>
+  </div>
+
+<% end %>

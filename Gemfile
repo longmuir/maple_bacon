@@ -3,7 +3,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'
 gem 'bcrypt-ruby', '~> 3.1.5'
-
+gem 'nested_form'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
