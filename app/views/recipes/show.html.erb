@@ -1,0 +1,13 @@
+<h1><%= @recipe.title %></h1>
+
+Ingredients
+<% @recipe.additions.each do | addition | %>
+  <li> <%= addition.quantity %> of <%= addition.ingredient.name %> </li>
+<% end %>
+<br>
+Instructions
+<ol>
+<% @recipe.steps.each do | step | %>
+  <li> <%= step.content %></li>
+<% end %>
+</ol>

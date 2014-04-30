@@ -1,7 +1,0 @@
-<tr class="fields">
-  <td class="quantity-row"><%= f.text_field :quantity, class: "tight-table-input" %></td>
-  <%= f.fields_for :ingredients do |ingredient_form| %>
-    <td class="ingredient-row"><%= ingredient_form.text_field :name, class: "tight-table-input" %></td>
-  <% end %>
-  <td class="table-remove-link"><%= f.link_to_remove "Remove"%></td>
-</tr>

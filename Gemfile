@@ -4,6 +4,8 @@ ruby '2.0.0'
 gem 'rails', '4.0.2'
 gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'nested_form'
+gem 'cocoon'
+gem 'formtastic'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,9 +13,10 @@ group :development do
   gem 'sqlite3', '1.3.8'
   gem 'factory_girl', '~> 4.4.0'
   gem 'capybara'
+  gem 'pry-rails'
 end
 
-gem 'sass-rails',   '4.0.1'
+gem 'sass-rails',   '~> 4.0.1'
 gem 'coffee-rails', '4.0.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

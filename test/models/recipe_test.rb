@@ -15,5 +15,19 @@ class RecipeTest < ActiveSupport::TestCase
     recipe = Recipe.new
     assert !recipe.save
   end
+
+  test "should save recipe with ingredient" do
+    recipe = Recipe.new
+    recipe.title = "Cookies"
+
+    apples = Ingredient.new(name: "apples")
+    apples.save
+    recipe.additions.build(ingredient: apples, quantity: "10")
+
+    recipe.steps.build(content: "Mix it up!")
+    recipe.steps.build(content: "Do it again!")
+
+    assert recipe.save
+  end
   
 end

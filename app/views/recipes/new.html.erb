@@ -1,15 +1,21 @@
 <h1 id="title">New Recipe</h1>
 
-<%= nested_form_for @recipe do |f| %>
-
+<%= form_for @recipe do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="row">
     <div class="small-4 columns">
       <table id="ingredients-form">
-        <th>Amount</th>
-        <th>Ingredient</th>
-        <%= f.fields_for :additions, :wrapper => false %>
+        <th class="quantity-row">Quantity</th>
+        <th class="ingredient-row"> Ingredient</th>
+        <%= f.fields_for :additions do |addition| %>
+          <%= render 'addition_fields', f: addition %>
+        <% end %>
       </table>
-      <p><%= f.link_to_add "Add another ingredient", :additions, :data => { :target => "#ingredients-form" } %></p>
+      <p><%= link_to_add_association "Add ingredient", f, :additions, 
+        'data-association-insertion-node' => '#ingredients-form', 
+        'data-association-insertion-method' => 'append',
+        :wrap_object => Proc.new { |addition| addition.build_ingredient; addition } %></p>
+
     </div>
 
     <div class="small-8 columns">
@@ -20,12 +26,9 @@
 
       <ol>
       <%= f.fields_for :steps do |step_form| %>
-        <li>
-          <%= step_form.link_to_remove "(remove)"%>
-          <%= step_form.text_area :content %> 
-        </li>
+          <%= render 'step_fields', f: step_form %>
       <% end %>
-      <p><%= f.link_to_add "Add another step", :steps %></p>
+      <p><%= link_to_add_association "Add another step", f, :steps %></p>
     </ol>
   </div>
 </div>
