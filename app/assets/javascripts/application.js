@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require foundation
 //= require_tree .
 //= require cocoon
+//= require autocomplete-rails
+
 $(function(){ $(document).foundation(); });

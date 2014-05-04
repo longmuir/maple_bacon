@@ -1,7 +1,11 @@
 MapleBacon::Application.routes.draw do
+  get "ingredients/index"
   resources :users
   resources :recipes
   resources :sessions, only: [:new, :create, :destroy]
+  resources :additions do
+    get :autocomplete_ingredient_name, :on => :collection
+  end
   get "users/index"
 
   root :to => 'static_pages#home'

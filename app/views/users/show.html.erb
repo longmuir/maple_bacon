@@ -3,6 +3,8 @@
 </h1>
 
 Your Recipes:
-<% @user.recipes.each do | recipe | %>
-  <ul><%= link_to(recipe.title, recipe) %></ul>
-<% end %>
+<ul>
+  <% @user.recipes.each do | recipe | %>
+    <li><%= link_to(recipe.title, recipe) %></li>
+  <% end %>
+</ul>

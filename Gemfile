@@ -6,6 +6,8 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'nested_form'
 gem 'cocoon'
 gem 'formtastic'
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
