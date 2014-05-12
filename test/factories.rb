@@ -7,7 +7,12 @@ FactoryGirl.define do
   end
 
   factory :contribution do
+    recipe
     user
+  end
+
+  factory :step do
+    content "Mix up the ingredients"
   end
 
   factory :ingredient do
@@ -22,6 +27,7 @@ FactoryGirl.define do
     title "Maple Balsamic Pork Chops"
     contribution
     addition
+    step
   end
 
 end

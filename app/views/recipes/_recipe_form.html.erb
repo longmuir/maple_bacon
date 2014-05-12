@@ -1,0 +1,41 @@
+
+<%= form_for @recipe do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="row">
+    <div class="small-4 columns">
+      <table id="ingredients-form">
+        <th class="quantity-row">Quantity</th>
+        <th class="ingredient-row"> Ingredient</th>
+        <%= f.fields_for :additions do |addition| %>
+          <%= render 'addition_fields', f: addition %>
+        <% end %>
+      </table>
+      <p><%= link_to_add_association "Add ingredient", f, :additions, 
+        'data-association-insertion-node' => '#ingredients-form', 
+        'data-association-insertion-method' => 'append',
+        :wrap_object => Proc.new { |addition| addition.build_ingredient; addition } %></p>
+
+    </div>
+
+    <div class="small-8 columns">
+      <%= f.label :title, "What are we eating?", style: "font-weight: bold" %>
+      <%= f.text_field :title %>
+
+      <h4>Steps</h4>
+
+      <ol>
+      <%= f.fields_for :steps do |step_form| %>
+          <%= render 'step_fields', f: step_form %>
+      <% end %>
+      <p><%= link_to_add_association "Add another step", f, :steps %></p>
+    </ol>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="small-2 small-centered columns">
+      <%= f.submit "I`m Done!", class: "brown-button" %>
+    </div>
+  </div>
+
+<% end %>

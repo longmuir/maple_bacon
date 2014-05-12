@@ -1,18 +1,22 @@
 require 'test_helper'
+require_relative '../helpers/user_test_helper'
+
 
 class RecipesControllerTest < ActionController::TestCase
+  include UserTestHelper
   # test "the truth" do
   #   assert true
   # end
-
   test "should create recipe" do
-      assert_difference('Recipe.count') do
+    login_user
+    assert_difference('Recipe.count') do
       post :create, recipe: {
-                          name: 'Maple Pork Chops', 
-                          additions_attributes: { quantity: "3", ingredients: {name: "apples"}}, 
-                          steps_attributes: { content: "Stir it up!"}
+                          title: 'Maple Pork Chops', 
+                          additions_attributes: { "0" => { quantity: "3 lbs", ingredient_name: "apples"} }, 
+                          steps_attributes: { "0" => { content: "Stir it up!"} }
                         }
     end
-    assert_redirected_to recipe_path(assigns(:user))
+    assert_redirected_to recipe_path(assigns(:recipe))
   end
+
 end

@@ -1,6 +1,7 @@
 module UserTestHelper
+    include SessionsHelper
   
-  def login_user
+  def login_user_via_root
     user = FactoryGirl.create(:user)
 
     visit "/"
@@ -12,6 +13,12 @@ module UserTestHelper
     click_button 'Sign In'
 
     assert page.has_content?('Welcome')
+    user
+  end
+
+  def login_user
+    user = FactoryGirl.create(:user)
+    sign_in(user, false)
     user
   end
 

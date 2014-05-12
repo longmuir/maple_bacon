@@ -12,19 +12,22 @@
       <li class="active">
           <%= link_to "Create New Recipe", new_recipe_path %>
       </li>
-      <li class="has-dropdown">
+       <li>
+            <%= link_to "Sign out", signout_path, method: "delete" %>
+          </li>
+   <!--   <li class="has-dropdown">
         <a href="#">Options</a>
         <ul class="dropdown">
           <li>
             <%= link_to "Sign out", signout_path, method: "delete" %>
           </li>
         </ul>
-      </li>
+      </li>-->
     </ul>
 
-    <!-- Left Nav Section -->
+    <!-- Left Nav Section 
     <ul class="left">
       <li><a href="#">Left Nav Button</a></li>
-    </ul>
+    </ul> -->
   </section>
 </nav>

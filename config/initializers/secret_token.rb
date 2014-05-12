@@ -18,3 +18,5 @@ def secure_token
 end
 
 MapleBacon::Application.config.secret_token = secure_token
+
+MapleBacon::Application.config.secret_key_base = 'c3db063ce474aee39401fbf5ad218af0cb3c6ed0ac42e364f6aaef961b0412be8aa096eaf161854209a79d81556f549874117b7a22f1f6b03e21c9e6ea3b5734'

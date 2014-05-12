@@ -10,7 +10,7 @@ class Addition < ActiveRecord::Base
   end
 
   def ingredient_name=(name)
-    self.ingredient = Ingredient.find_or_create_by_name(name) unless name.blank?
+    self.ingredient = Ingredient.find_or_create_by(name: name) unless name.blank?
   end
 
 

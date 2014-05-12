@@ -1,10 +1,21 @@
-<h1>
-  Welcome <%= @user.name %>!
-</h1>
+<div id = "title">
+  <h1>Welcome <%= @user.name %></h1>
+</div>
 
-Your Recipes:
-<ul>
-  <% @user.recipes.each do | recipe | %>
-    <li><%= link_to(recipe.title, recipe) %></li>
-  <% end %>
-</ul>
+<div class = "row">
+  <div class="small-3 small-centered columns">
+
+    <h2 class="subheader">
+      <div id="user-recipe-title">Your Recipes<div>
+    </h2>
+
+    <div id = "user-recipe-list">
+      <% @user.recipes.each do | recipe | %>
+        <div id="user-recipe-list-item">
+          <%= link_to(recipe.title, recipe, class: "brown-button") %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
