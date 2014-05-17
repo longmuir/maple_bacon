@@ -8,6 +8,8 @@ gem 'cocoon'
 gem 'formtastic'
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
+gem 'paperclip'
+gem 'aws-sdk'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

@@ -16,6 +16,7 @@
 
 # Ignore other files...
 database.yml
+s3.yml
 doc/
 *.swp
 *~

@@ -1,6 +1,7 @@
 
 <%= form_for @recipe do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+
   <div class="row">
     <div class="small-4 columns">
       <table id="ingredients-form">
@@ -10,12 +11,15 @@
           <%= render 'addition_fields', f: addition %>
         <% end %>
       </table>
-      <p><%= link_to_add_association "Add ingredient", f, :additions, 
-        'data-association-insertion-node' => '#ingredients-form', 
-        'data-association-insertion-method' => 'append',
-        :wrap_object => Proc.new { |addition| addition.build_ingredient; addition } %></p>
+      <%= link_to_add_association "Add ingredient", f, :additions, 
+      'data-association-insertion-node' => '#ingredients-form', 
+      'data-association-insertion-method' => 'append',
+      :wrap_object => Proc.new { |addition| addition.build_ingredient; addition } %>
 
+      <p><%= render 'picture_form', form: f %></p>
+      
     </div>
+
 
     <div class="small-8 columns">
       <%= f.label :title, "What are we eating?", style: "font-weight: bold" %>
@@ -32,10 +36,10 @@
   </div>
 </div>
 
-  <div class="row">
-    <div class="small-2 small-centered columns">
-      <%= f.submit "I`m Done!", class: "brown-button" %>
-    </div>
+<div class="row">
+  <div class="small-2 small-centered columns">
+    <%= f.submit "I`m Done!", class: "brown-button" %>
   </div>
+</div>
 
 <% end %>

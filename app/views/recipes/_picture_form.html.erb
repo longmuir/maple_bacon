@@ -1,0 +1,9 @@
+<div id="picture-form">
+  <% if !@recipe.picture.file? %>
+    <p><b>Add a photo!</b></p>
+  <% else%>
+    <p><b>Change the picture?</b></p>
+    <p><%= image_tag @recipe.picture.url(:thumb)  %></p>
+  <% end %>
+  <%= form.file_field :picture %>
+</div>
