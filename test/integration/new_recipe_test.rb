@@ -28,15 +28,28 @@ class CreateRecipeTest < ActionDispatch::IntegrationTest
   end
 
   test "Edit existing recipe should change recipe" do
-    skip
     # need to sort out issues with factory girl
     user = login_user_via_root
     recipe = FactoryGirl.create(:recipe)
 
     visit "/recipes/#{recipe.id}"
-    assert page.has_content(recipe.title)
-    assert page.has_content(recipe.additions.first.quantity)
-    assert page.has_content(recipe.additions.first.ingredient_name)
+    assert page.has_content?(recipe.title)
+    assert page.has_content?(recipe.additions.first.quantity)
+    assert page.has_content?(recipe.additions.first.ingredient_name)
+
+    click_link("Edit Recipe")
+    assert page.has_content?("Edit")
+    assert page.has_content?(recipe.title)
+
+    fill_in 'recipe_title', with: "Steak"
+    fill_in 'recipe_additions_attributes_0_ingredient_name', with: "steak"
+    fill_in 'recipe_steps_attributes_0_content', with: "Grill It!"
+
+    click_button "Done"
+    assert page.has_content?("Steak")
+    assert page.has_content?("steak")
+    assert page.has_content?("Grill It!")
+
   end
 
 end

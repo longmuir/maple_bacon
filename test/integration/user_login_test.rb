@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserLoginTest < ActionDispatch::IntegrationTest
 
-  test "Visit home page and sign in" do
+  test "Visit home page and sign in and out" do
     user = FactoryGirl.create(:user)
 
     visit "/"
@@ -12,24 +12,9 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Sign In'
-
     assert page.has_content?('Welcome')
+
+    click_link 'Sign out'
+    assert page.has_content?("MAPLE. BACON. ENJOY.")
   end
-
-  # test "Signed-In user adds a new recipe" do
-  #   user = FactoryGirl.create(:user)
-
-  #   visit "/signin"
-  #   fill_in 'Email', with: user.email
-  #   fill_in 'Password', with: user.password
-  #   click_button 'Sign In'
-  #   assert page.has_content?('Welcome')
-
-  #   click_link('Create New Recipe')
-  #   assert page.has_content?('New Recipe')
-
-  #   first(:link, 'Remove').click
-  #   assert page.has_content?('New Recipe')
-  # end
-
 end

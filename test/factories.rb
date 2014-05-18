@@ -7,8 +7,8 @@ FactoryGirl.define do
   end
 
   factory :contribution do
-    recipe
     user
+    #recipe  #created circule reference - not needed for tesitng.
   end
 
   factory :step do
@@ -20,14 +20,17 @@ FactoryGirl.define do
   end
 
   factory :addition do
+    quantity "2 lbs"
     ingredient
   end
 
   factory :recipe do
     title "Maple Balsamic Pork Chops"
-    contribution
-    addition
-    step
+    after(:build) do |recipe|
+     # recipe.contributions << FactoryGirl.create(:contribution)
+      recipe.additions << FactoryGirl.create(:addition)
+      recipe.steps << FactoryGirl.create(:step)
+    end
   end
 
 end
