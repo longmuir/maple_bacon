@@ -4,6 +4,10 @@ FactoryGirl.define do
     email "john@doh.com"
     password "foobar"
     password_confirmation "foobar"
+
+    factory :admin do
+      admin true
+    end
   end
 
   factory :contribution do
@@ -27,7 +31,7 @@ FactoryGirl.define do
   factory :recipe do
     title "Maple Balsamic Pork Chops"
     after(:build) do |recipe|
-     # recipe.contributions << FactoryGirl.create(:contribution)
+      recipe.contributions << FactoryGirl.create(:contribution)
       recipe.additions << FactoryGirl.create(:addition)
       recipe.steps << FactoryGirl.create(:step)
     end

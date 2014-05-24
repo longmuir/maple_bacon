@@ -19,22 +19,36 @@
   text-align: center;
 }
 
+#title h1 {
+  margin:0;
+}
+
+#author-sub {
+  margin-bottom:0.5em;
+}
+
 #user-recipe-title {
   text-align: center; 
   margin: 1rem;
 }
 
 #user-recipe-list-item {
-  margin: 0.5em;
-  padding: 0.3em;
+  margin: 0.1em;
+  padding: 0.5em;
   list-style: none; 
   text-align: center; 
   vertical-align: middle;
-  font-size: xx-large;
-  font-weight: bold;
-  line-height: 5;
+  font-size: x-large;
   background-color: #8a0808;
   color:#ffffff;
+}
+
+#user-recipe-list-text {
+  text-align: center; 
+  bottom: 1em;
+  margin-top:1em;
+  padding:0;
+  width: 100%;
 }
 
 #user-recipe-list {

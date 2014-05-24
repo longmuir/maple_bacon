@@ -25,6 +25,9 @@ class CreateRecipeTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Maple Pork Chops")
     assert page.has_content?("3 lbs of pork")
     assert page.has_content?("Mix it up!")
+
+    visit "/"
+    assert page.has_content?("Maple Pork Chops")
   end
 
   test "Edit existing recipe should change recipe" do

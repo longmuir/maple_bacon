@@ -9,14 +9,19 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(password: "foobar", password_confirmation: "foobar")
   end
 
+  def regular_user
+    User.new(name: "Mr. Ed",
+             email: "ed@hotmail.com",
+             password: "foobar", 
+             password_confirmation: "foobar", )
+  end
+
   test "should respond to password_digest" do 
     assert_respond_to(@user, :password_digest)
   end
 
-  test "should save @user with name and valid email" do
-    @user.name = "Mr. Ed"
-    @user.email = "ed@hotmail.com"
-    assert @user.save
+  test "should save user with name and valid email" do
+    assert regular_user.save
   end
 
   test "should save @user with remember_token" do
@@ -62,5 +67,8 @@ class UserTest < ActiveSupport::TestCase
     assert !@user.save
   end
 
+  test "regular user cannot delete other users" do
+    user = User.new(password: "foobar", password_confirmation: "foobar")
+  end
 
 end

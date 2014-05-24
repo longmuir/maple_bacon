@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '4.0.2'
+gem 'pg'
 gem 'bcrypt-ruby', '~> 3.1.5'
 gem 'nested_form'
 gem 'cocoon'
@@ -14,7 +15,6 @@ gem 'aws-sdk'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do 
-  gem 'sqlite3', '1.3.8'
   gem 'factory_girl', '~> 4.4.0'
   gem 'capybara'
   gem 'pry-rails'
@@ -33,7 +33,6 @@ gem 'foundation-rails'
 
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor'
 end
 

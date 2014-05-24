@@ -6,9 +6,14 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get index" do
+  test "unsigned in should not get index" do
     get :index
-    assert_response :success
+    assert_redirected_to signin_path
+  end
+
+  test "unsignedin user should not get show page" do
+    get(:show, {'id' => "1"})
+    assert_redirected_to signin_path
   end
 
   test "should create user" do

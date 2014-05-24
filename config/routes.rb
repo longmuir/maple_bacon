@@ -18,6 +18,8 @@ MapleBacon::Application.routes.draw do
   match '/signin',  to: 'sessions#new',       via: 'get'
   match '/signout', to: 'sessions#destroy',   via: 'delete'
 
+  match '/recipes',      to: 'recipes#index',           via: 'get'
+
 
   #Original generated routes
   #get "static_pages/home"

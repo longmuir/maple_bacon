@@ -5,8 +5,8 @@ class Recipe < ActiveRecord::Base
   has_many :users, through: :contributions
   has_many :steps, :dependent => :destroy
 
-  has_attached_file :picture, :styles => { :small => "200x200>",
-                                           :medium => "300x300>", 
+  has_attached_file :picture, :styles => { :small => "200x133>",
+                                           :medium => "300x200>", 
                                            :thumb => "100x100>"}
   validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
   validates_attachment_size :picture, :less_than => 1.megabytes

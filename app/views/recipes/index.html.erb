@@ -1,0 +1,21 @@
+<h3 class="subheader">
+  <div id="user-recipe-title">
+    <% if signed_in? %>
+    
+     <div id = "title">
+      <h1>Welcome <%= current_user.name %></h1>
+    </div>
+
+      <%= link_to "Your Recipes", current_user %> • 
+      <%= link_to "All Recipes", recipes_path %>
+    <% else %>
+      <div id = "title">
+        <h1>Welcome to Maple Bacon!</h1>
+      </div>
+      Current Recipes
+    <% end %>
+  </div>
+</h3>
+
+<%= render 'shared/recipe_list', recipes: @recipes %>
+

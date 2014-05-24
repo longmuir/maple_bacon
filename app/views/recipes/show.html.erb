@@ -1,5 +1,6 @@
 <div id="title">
     <h1><%= @recipe.title %></h1>
+    <div id="author-sub">By <%=@recipe.users[0].name %></div>
     <%= image_tag @recipe.picture.url(:medium) unless @recipe.picture.nil? %>
 </div>
 
@@ -27,13 +28,16 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="small-2 small-centered columns">
-    <%= link_to "Edit Recipe", edit_recipe_path, class: "brown-button" %>
-    <%= link_to "Delete Recipe", 
-                @recipe, 
-                method: :delete, 
-                data: { confirm: "Are you sure you want to delete this recipe?" }, 
-                class: "brown-button" %>
+<% if signed_in? %>
+  <div class="row">
+    <div class="small-2 small-centered columns">
+      <%= link_to "Edit Recipe", edit_recipe_path, class: "brown-button" %>
+      <%= link_to "Delete Recipe", 
+                  @recipe, 
+                  method: :delete, 
+                  data: { confirm: "Are you sure you want to delete this recipe?" }, 
+                  class: "brown-button" %>
+    </div>
   </div>
-</div>
+
+<% end %>

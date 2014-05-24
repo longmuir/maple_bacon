@@ -4,9 +4,26 @@ require_relative '../helpers/user_test_helper'
 
 class RecipesControllerTest < ActionController::TestCase
   include UserTestHelper
-  # test "the truth" do
-  #   assert true
-  # end
+
+
+  test "unsignedin user can view recipe" do
+    recipe = FactoryGirl.create(:recipe)
+    get(:show, {'id' => recipe.id})
+    assert_response :success
+  end
+
+  test "unsignedin user cannot edit recipe" do
+    recipe = FactoryGirl.create(:recipe)
+    get(:edit, {'id' => recipe.id})
+    assert_redirected_to signin_path
+  end
+
+  test "unsignedin user cannot delete recipe" do
+    recipe = FactoryGirl.create(:recipe)
+    delete(:destroy, {'id' => recipe.id})
+    assert_redirected_to signin_path
+  end
+
   test "should create recipe" do
     login_user
     assert_difference('Recipe.count') do

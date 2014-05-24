@@ -17,4 +17,13 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     click_link 'Sign out'
     assert page.has_content?("MAPLE. BACON. ENJOY.")
   end
+
+  test "Non-signed in user cannot visit user page" do
+    user = FactoryGirl.create(:user)
+
+    visit "/users/1"
+    assert !page.has_content?('Welcome')
+    assert page.has_content?("Sign In")
+  end
+
 end

@@ -3,27 +3,11 @@
 </div>
 
 <h3 class="subheader">
-  <div id="user-recipe-title">Your Recipes<div>
+  <div id="user-recipe-title">
+    <%= link_to "Your Recipes", controller: "users", action: "show" %> • 
+    <%= link_to "All Recipes", recipes_path %>
+  <div>
 </h3>
 
-<div class = "row">
-  <div class="small-7 small-centered columns" id = "user-recipe-list">
+<%= render 'shared/recipe_list', recipes: @user.recipes %>
 
-    <% @user.recipes.each do | recipe | %>
-      <%= link_to recipe do %>
-        <div class="row" id="user-recipe-list-item">
-
-          <div class="small-4 columns">
-            <%= image_tag recipe.picture.url(:small) if recipe.picture.file? %>
-          </div>
-
-          <div class="small-8 columns">
-            <%= recipe.title %>
-          </div>
-
-        </div>
-      <% end %>
-    <% end %>
-    
-  </div>
-</div>

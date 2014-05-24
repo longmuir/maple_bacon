@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  before_action :signed_in_user, only: [:create, :destroy, :edit, :update]
 
   def new
     redirect_to signin_path unless signed_in?
@@ -8,9 +9,11 @@ class RecipesController < ApplicationController
     3.times { @recipe.steps.build }
   end
 
-  def create
-    redirect_to signin_path unless signed_in?
+  def index
+    @recipes = Recipe.all
+  end
 
+  def create
     @recipe = Recipe.new(recipe_params)
     contribution = current_user.contributions.build(recipe: @recipe)
     if @recipe.save && contribution.save
@@ -49,6 +52,15 @@ private
                                    :picture,
                                    additions_attributes: [:id, :quantity, :ingredient_name, :_destroy], 
                                    steps_attributes: [:id, :content, :_destroy])
+  end
+
+  def correct_user
+    begin
+      user = User.find(user_id)
+      redirect_to root_url, notice: "Wrong user." unless current_user?(user)
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_url, notice: "You are trying to access an incorrect user."
+    end
   end
 
 end
