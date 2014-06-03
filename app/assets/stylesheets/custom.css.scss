@@ -327,11 +327,11 @@ html{
 }
 
 .move{
-  -webkit-animation:move 1s infinite;
-  -moz-animation:move 1s infinite;
-  -o-animation:move 1s infinite;
-  -ms-animation:move 1s infinite;
-  animation:move 1s infinite;
+  -webkit-animation:move .5s infinite;
+  -moz-animation:move .5s infinite;
+  -o-animation:move .5s infinite;
+  -ms-animation:move .5s infinite;
+  animation:move .5s infinite;
 }
 
 @-webkit-keyframes move{
@@ -380,11 +380,11 @@ html{
 }
 
 .move2{
-  -webkit-animation:move2 1s infinite;
-  -moz-animation:move2 1s infinite;
-  -o-animation:move2 1s infinite;
-  -ms-animation:move2 1s infinite;
-  animation:move2 1s infinite;
+  -webkit-animation:move2 .5s infinite;
+  -moz-animation:move2 .5s infinite;
+  -o-animation:move2 .5s infinite;
+  -ms-animation:move2 .5s infinite;
+  animation:move2 .5s infinite;
 }
 
 @-webkit-keyframes move2{
