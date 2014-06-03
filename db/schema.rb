@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20140522201144) do
     t.string   "source_chef"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"

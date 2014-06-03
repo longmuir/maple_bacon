@@ -336,100 +336,100 @@ html{
 
 @-webkit-keyframes move{
   50%{
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -o-transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(-65deg);
+    -moz-transform:rotate(-65deg);
+    -o-transform:rotate(-65deg);
+    -ms-transform:rotate(-65deg);
   }
 }
 
 @-moz-keyframes move{
   50%{
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -o-transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(-65deg);
+    -moz-transform:rotate(-65deg);
+    -o-transform:rotate(-65deg);
+    -ms-transform:rotate(-65deg);
   }
 }
 
 @-o-keyframes move{
   50%{
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -o-transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(-65deg);
+    -moz-transform:rotate(-65deg);
+    -o-transform:rotate(-65deg);
+    -ms-transform:rotate(-65deg);
   }
 }
 
 @-ms-keyframes move{
   50%{
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -o-transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(-65deg);
+    -moz-transform:rotate(-65deg);
+    -o-transform:rotate(-65deg);
+    -ms-transform:rotate(-65deg);
   }
 }
 
 @-keyframes move{
   50%{
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -o-transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
+    -webkit-transform:rotate(-65deg);
+    -moz-transform:rotate(-65deg);
+    -o-transform:rotate(-65deg);
+    -ms-transform:rotate(-65deg);
   }
 }
 
 .move2{
-  -webkit-animation:move2 .5s infinite;
-  -moz-animation:move2 .5s infinite;
-  -o-animation:move2 .5s infinite;
-  -ms-animation:move2 .5s infinite;
-  animation:move2 .5s infinite;
+  -webkit-animation:move2 1s infinite;
+  -moz-animation:move2 1s infinite;
+  -o-animation:move2 1s infinite;
+  -ms-animation:move2 1s infinite;
+  animation:move2 1s infinite;
 }
 
 @-webkit-keyframes move2{
   50%{
-    -webkit-transform:rotate(-30deg);
-    -moz-transform:rotate(-30deg);
-    -o-transform:rotate(-30deg);
-    -ms-transform:rotate(-30deg);
-  //  transform:rotate(-30deg);
+    -webkit-transform:rotate(105deg);
+    -moz-transform:rotate(105deg);
+    -o-transform:rotate(105deg);
+    -ms-transform:rotate(105deg);
+    transform:rotate(105deg);
   }
 }
 
 @-moz-keyframes move2{
   50%{
-    -webkit-transform:rotate(-30deg);
-    -moz-transform:rotate(-30deg);
-    -o-transform:rotate(-30deg);
-    -ms-transform:rotate(-30deg);
+    -webkit-transform:rotate(105deg);
+    -moz-transform:rotate(105deg);
+    -o-transform:rotate(105deg);
+    -ms-transform:rotate(105deg);
   }
 }
 
 @-o-keyframes move2{
   50%{
-    -webkit-transform:rotate(-30deg);
-    -moz-transform:rotate(-30deg);
-    -o-transform:rotate(-30deg);
-    -ms-transform:rotate(-30deg);
+    -webkit-transform:rotate(105deg);
+    -moz-transform:rotate(105deg);
+    -o-transform:rotate(105deg);
+    -ms-transform:rotate(105deg);
   }
 }
 
 @-ms-keyframes move2{
   50%{
-    -webkit-transform:rotate(-30deg);
-    -moz-transform:rotate(-30deg);
-    -o-transform:rotate(-30deg);
-    -ms-transform:rotate(-30deg);
+    -webkit-transform:rotate(105deg);
+    -moz-transform:rotate(105deg);
+    -o-transform:rotate(105deg);
+    -ms-transform:rotate(105deg);
   }
 }
 
 @-keyframes move2{
   50%{
-    -webkit-transform:rotate(-30deg);
-    -moz-transform:rotate(-30deg);
-    -o-transform:rotate(-30deg);
-    -ms-transform:rotate(-30deg);
+    -webkit-transform:rotate(105deg);
+    -moz-transform:rotate(105deg);
+    -o-transform:rotate(105deg);
+    -ms-transform:rotate(105deg);
   }
 }
 
